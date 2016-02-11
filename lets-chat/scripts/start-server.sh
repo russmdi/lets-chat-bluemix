@@ -1,29 +1,31 @@
 #!/bin/bash
 
+echo "running start-server.sh script"
+
 #Extract user-provided Mongo credentials from VCAP_SERVICES
-TEMP_URI=`python scripts/extract-vcap.py user-provided 0 credentials.uri`
-if [ "$?" != "0" ]; then
-	echo "'credentials.uri' not found in 'user-provided' VCAP_SERVICES"
-	exit 1
-fi
+#TEMP_URI=`python scripts/extract-vcap.py user-provided 0 credentials.uri`
+#if [ "$?" != "0" ]; then
+#	echo "'credentials.uri' not found in 'user-provided' VCAP_SERVICES"
+#	exit 1
+#fi
 
-TEMP_PORT=`python scripts/extract-vcap.py user-provided 0 credentials.port`
-if [ "$?" != "0" ]; then
-        echo "'credentials.port' not found in 'user-provided' VCAP_SERVICES"
-        exit 1
-fi
+#TEMP_PORT=`python scripts/extract-vcap.py user-provided 0 credentials.port`
+#if [ "$?" != "0" ]; then
+#        echo "'credentials.port' not found in 'user-provided' VCAP_SERVICES"
+#        exit 1
+#fi
 
-TEMP_USER=`python scripts/extract-vcap.py user-provided 0 credentials.user`
-if [ "$?" != "0" ]; then
-        echo "'credentials.user' not found in 'user-provided' VCAP_SERVICES"
-        exit 1
-fi
+#TEMP_USER=`python scripts/extract-vcap.py user-provided 0 credentials.user`
+#if [ "$?" != "0" ]; then
+#        echo "'credentials.user' not found in 'user-provided' VCAP_SERVICES"
+#        exit 1
+#fi
 
-TEMP_PASS=`python scripts/extract-vcap.py user-provided 0 credentials.password`
-if [ "$?" != "0" ]; then
-        echo "'credentials.password' not found in 'user-provided' VCAP_SERVICES"
-        exit 1
-fi
+#TEMP_PASS=`python scripts/extract-vcap.py user-provided 0 credentials.password`
+#if [ "$?" != "0" ]; then
+#        echo "'credentials.password' not found in 'user-provided' VCAP_SERVICES"
+#        exit 1
+#fi
 
 #Check for a database name passed in via --env, otherwise use default database name below
 #DEFAULT_DBNAME is "lets-chat-mongo"
@@ -36,4 +38,5 @@ export LCB_DATABASE_URI="mongodb://031760db-a3b0-4536-ad94-2cf37cb77ea0:07f26653
 sleep 60
 
 #Run server
+echo "starting server"
 npm start
