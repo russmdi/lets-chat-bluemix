@@ -6,9 +6,9 @@
 #		plan: user-provided
 applications:
 - services:
-  - lets-chat-mongo
-  name: lets-chat-bridge
-  host: lets-chat-bridge
+  - mongodb-lets-chat
+  name: lets-chat-bridge-rbw
+  host: lets-chat-bridge-rbw
   no-hostname: true
   no-route: true
   domain: mybluemix.net

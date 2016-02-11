@@ -94,7 +94,7 @@ stages:
   - type: stage
   properties:
   - name: BIND_TO
-    value: lets-chat-bridge
+    value: lets-chat-bridge-rbw
     type: text
   - name: CONTAINER_SIZE
     value: tiny
